@@ -17,3 +17,7 @@ fun printBoard(arr: Array<Char>){
 fun initBoard(initChar: Char, init: (Char) -> Unit){
     init(initChar)
 }
+
+fun inInRange(x: Int, y: Int){
+    x in 0..2 && y in 0..2
+}
