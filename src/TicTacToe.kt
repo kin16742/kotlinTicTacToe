@@ -1,6 +1,8 @@
 
 fun main() {
-    var arr = Array<Char>(9) {' '}
+    var arr = Array<Char>(9) {'O'}
+
+    initBoard(' ') {initChar -> arr = Array<Char>(9) {initChar} }
     printBoard(arr)
 }
 
@@ -10,4 +12,8 @@ fun printBoard(arr: Array<Char>){
         println("$i ${arr[3 * i]}|${arr[3 * i + 1]}|${arr[3 * i + 2]} ")
         if(i < 2) println("  -+-+-")
     }
+}
+
+fun initBoard(initChar: Char, init: (Char) -> Unit){
+    init(initChar)
 }
