@@ -2,6 +2,7 @@
 fun main() {
     var arr = Array<Char>(9) {'O'}
 
+    playerInput(1)
     initBoard(' ') {initChar -> arr = Array<Char>(9) {initChar} }
     printBoard(arr)
 }
@@ -18,6 +19,13 @@ fun initBoard(initChar: Char, init: (Char) -> Unit){
     init(initChar)
 }
 
-fun inInRange(x: Int, y: Int){
-    x in 0..2 && y in 0..2
+fun isInRange(x: List<Int>): Boolean{
+    return x[0] in 0..2 && x[1] in 0..2
+}
+
+
+fun playerInput(playerId: Int){
+    print("Player $playerId 입력 : ")
+    val str: String = readLine()!!.toString()
+    val num = str.split(", ").map { it.toInt() }
 }
