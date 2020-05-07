@@ -5,10 +5,9 @@ fun main() {
 }
 
 fun printBoard(arr: Array<Char>){
-    println("   0 1 2")
-    println("0 ${arr[0]}|${arr[1]}|${arr[2]} ")
-    println("  -+-+-")
-    println("1 ${arr[3]}|${arr[4]}|${arr[5]}")
-    println("  -+-+-")
-    println("2 ${arr[6]}|${arr[7]}|${arr[8]}")
+    println("  0 1 2")
+    for(i in 0..2){
+        println("$i ${arr[3 * i]}|${arr[3 * i + 1]}|${arr[3 * i + 2]} ")
+        if(i < 2) println("  -+-+-")
+    }
 }
