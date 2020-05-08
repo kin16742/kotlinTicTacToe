@@ -39,3 +39,15 @@ fun playerInput(playerId: Int): List<Int>{
     val str: String = readLine()!!.toString()
     return str.split(", ").map { it.toInt() }
 }
+
+fun isWin(arr: Array<Char>, c: Char): Boolean{
+    return winCheck(arr,c,0,1,2) || winCheck(arr,c,3,4,5) || winCheck(arr,c,6,7,8) ||
+            winCheck(arr,c,0,3,6) || winCheck(arr,c,1,4,7)|| winCheck(arr,c,2,5,8)||
+            winCheck(arr,c,0,4,8)|| winCheck(arr,c,2,4,6)
+}
+
+fun winCheck(arr: Array<Char>, c: Char, vararg a: Int): Boolean{
+    for(i in a)
+        if(arr[i] != c) return false
+    return true
+}
